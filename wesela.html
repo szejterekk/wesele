@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Weselny</title>
+    <link rel="stylesheet" href="styl5.css">
+</head>
+<body>
+    <header id="banner">
+        <h1>
+            <img src="logo.png" alt="logo" height="70px">
+            Dom Weselny zorganizuje wesele za Ciebie
+            <img src="logo.png" alt="logo" height="70px">
+        </h1>
+    </header>
+    <section id="lewy">
+        <h2>Dom Weselny</h2>
+        <p>ul Przemysłowa 5</p>
+        <p>Kalisz</p>
+        <p><a href="logo.png">Pobierz logo</a></p>
+    </section>
+    <section id="środkowy">
+        <h2>Oferujemy</h2>
+        <ol>
+            <li>Wesela</li>
+            <li>Bankiety</li>
+            <li>Konferencje</li>
+        </ol>
+    </section>
+    <section id="prawy">
+        <p><a href="Regulamin.txt" id="OdsylaczPrawy">Czytaj regulamin</a></p>
+
+    </section>
+    <section id="dolny">
+        <h2>Ile będzie kosztowało moje wesele?</h2>
+        <label>Podaj liczbę gości: </label><Input type="number" id="LiczbaGosci">
+        <input type="checkbox" id="stan"><label>Wesele z poprawinami?</label>
+        <button onclick="oblicz()">Oblicz koszt</button>
+        <p id="wynik"></p>
+    </section>
+    <footer id="stopka">
+        <em>Stronę internetową opracował: Sebastian Soja</em>
+    </footer>
+    <script>
+        function oblicz(){
+            var JednaOsoba = 100
+            var LiczbaOSob = document.getElementById("LiczbaGosci")  .value
+            var poprawinki = document.getElementById("stan").checked
+            var CalkowityKoszt = LiczbaOSob * JednaOsoba
+            if(poprawinki){
+                CalkowityKoszt *= 1.3;
+            }
+            document.getElementById("wynik").innerHTML = "Koszt twojego wesela to " +CalkowityKoszt+ " złotych"
+           
+         }
+    </script>
+</body>
+</html>
